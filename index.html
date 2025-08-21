@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justin Bieber Fan Page</title>
+    <!-- Use a simple CDN to import Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Add a fallback font and some custom styling that isn't easily done with Tailwind */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        /* Hide images initially for the slideshow */
+        .slide-image {
+            display: none;
+        }
+
+        /* Show the first image by default */
+        .slide-image.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center p-4 md:p-8">
+
+    <!-- Main container for the fan page content -->
+    <div class="container mx-auto bg-white rounded-xl shadow-2xl p-6 md:p-10 max-w-5xl">
+
+        <!-- Header section -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-2">Welcome to the Justin Bieber Fan Page!</h1>
+            <p class="text-gray-500 text-lg md:text-xl">Celebrating a decade of music, talent, and passion.</p>
+        </header>
+
+        <!-- Main content section -->
+        <main>
+            <!-- About section with text and image -->
+            <section class="flex flex-col md:flex-row items-center justify-between mb-10 gap-8">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-semibold text-gray-800 mb-4">About Justin Bieber</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Justin Drew Bieber is a Canadian singer, songwriter, and actor. Discovered by American talent manager Scooter Braun and signed with RBMG Records in 2008, Bieber gained a massive following with his debut EP, "My World," in 2009. He quickly became a global pop sensation, winning numerous awards and breaking chart records. His music, which spans from pop and R&B to hip hop, has evolved significantly throughout his career, reflecting his personal growth.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Beyond his musical career, Bieber is known for his philanthropy and influence on pop culture. He has used his platform to raise awareness for various causes and has become an influential figure for a generation of fans worldwide.
+                    </p>
+                </div>
+                <!-- This placeholder image represents the first image resource (justin1) -->
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="\JustinBieberFanPage\resources\justin1.jpg" alt="Justin Bieber smiling" class="rounded-xl shadow-lg w-full md:w-auto h-auto object-cover">
+                </div>
+            </section>
+
+            <!-- Image Gallery/Slideshow section -->
+            <section class="mt-10">
+                <h2 class="text-3xl font-semibold text-center text-gray-800 mb-6">Photo Gallery</h2>
+                <div class="relative w-full max-w-3xl mx-auto rounded-xl shadow-lg overflow-hidden">
+                    <!-- Slideshow images - these represent the user's specified resources -->
+                    <!-- I'm using placeholder images to simulate the user's local files (justin1.jpg, etc) -->
+                    <img src="\JustinBieberFanPage\resources\justin1.jpg" class="slide-image w-full active" alt="Justin Bieber photo 1">
+                    <img src="\JustinBieberFanPage\resources\justin2.jpg" class="slide-image w-full" alt="Justin Bieber photo 2">
+                    <img src="\JustinBieberFanPage\resources\justin3.jpg" class="slide-image w-full" alt="Justin Bieber photo 3">
+                    <img src="\JustinBieberFanPage\resources\justin4.jpg" class="slide-image w-full" alt="Justin Bieber photo 4">
+                    <img src="\JustinBieberFanPage\resources\justin5.jpg" class="slide-image w-full" alt="Justin Bieber photo 5">
+                    <img src="\JustinBieberFanPage\resources\justin6.jpg" class="slide-image w-full" alt="Justin Bieber photo 6">
+
+                    <!-- Slideshow navigation buttons -->
+                    <button id="prevBtn" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white text-gray-800 p-3 rounded-full shadow-lg hover:bg-gray-200 transition-all duration-300 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <button id="nextBtn" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white text-gray-800 p-3 rounded-full shadow-lg hover:bg-gray-200 transition-all duration-300 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer section -->
+        <footer class="text-center mt-10 text-gray-500 text-sm">
+            <p>&copy; 2025 Justin Bieber Fan Page. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript for the slideshow functionality -->
+    <script>
+        // Wait for the window to load before running the script
+        window.onload = function() {
+            // Select all the images in the slideshow
+            const slides = document.querySelectorAll('.slide-image');
+            // Select the next and previous buttons
+            const nextBtn = document.getElementById('nextBtn');
+            const prevBtn = document.getElementById('prevBtn');
+
+            let currentSlide = 0;
+
+            // Function to show a specific slide
+            function showSlide(index) {
+                // Hide all images by removing the 'active' class
+                slides.forEach((slide) => {
+                    slide.classList.remove('active');
+                });
+                // Add the 'active' class to the desired image to make it visible
+                slides[index].classList.add('active');
+            }
+
+            // Event listener for the next button
+            nextBtn.addEventListener('click', () => {
+                // Increment the slide index
+                currentSlide++;
+                // If we've reached the end, loop back to the first slide
+                if (currentSlide >= slides.length) {
+                    currentSlide = 0;
+                }
+                // Show the new slide
+                showSlide(currentSlide);
+            });
+
+            // Event listener for the previous button
+            prevBtn.addEventListener('click', () => {
+                // Decrement the slide index
+                currentSlide--;
+                // If we've gone before the start, loop back to the last slide
+                if (currentSlide < 0) {
+                    currentSlide = slides.length - 1;
+                }
+                // Show the new slide
+                showSlide(currentSlide);
+            });
+
+            // Optional: Start a timer for an automatic slideshow
+            // setInterval(() => {
+            //     nextBtn.click(); // Programmatically click the next button
+            // }, 5000); // Change slide every 5 seconds
+        };
+    </script>
+</body>
+</html>
