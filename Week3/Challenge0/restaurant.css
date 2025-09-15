@@ -1,0 +1,80 @@
+/* DO NOT MODIFY THE BELOW CSS STYLING */
+* {
+    padding: 0;
+    margin: auto;
+}
+
+
+/* YOU MAY MODIFY THIS */
+#floor {
+    margin-top: 50px;
+    width: 600px;
+    height: 420px;
+    background-color: aqua;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+/* YOU MAY MODIFY THIS */
+.dining-table {
+    background-color: pink;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    text-align: justify;
+    margin: 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+/* YOU MAY MODIFY THIS */
+.row {
+    display: flex;
+    text-align: center;
+
+}
+
+
+/* YOU MAY MODIFY THIS */
+.buffet-corner {
+    height: 100px;
+    width: 200px;
+    background-color: yellow;
+    margin-right: 200px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+/* YOU MAY MODIFY THIS */
+.cashier-table {
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+    align-items: right;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+/* YOU MAY ADD MORE CSS STYLING ANYWHERE IN THIS FILE */
