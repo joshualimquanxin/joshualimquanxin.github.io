@@ -1,0 +1,13 @@
+.block-demo {
+    display: block; /* this is by default block */
+    background-color: aqua;
+    margin: 6px 0px;
+}
+
+.inline-demo {
+    display:inline-block;
+    background-color: pink;
+    margin: 6px 0;
+    width: 100px;
+    height: 80px;
+}
